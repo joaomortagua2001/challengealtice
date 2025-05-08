@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Labseq Checker</h1>
+
+  <label for="inputValue">Número (n):</label>
+  <input type="number" [(ngModel)]="inputValue" id="inputValue" />
+
+  <button (click)="fetchValue()">Obter valor</button>
+
+  <div *ngIf="loading">A obter o valor...</div>
+  <div *ngIf="error" style="color: red;">{{ error }}</div>
+
+  <div *ngIf="result">
+    <p><strong>Index:</strong> {{ result.index }}</p>
+    <p><strong>Valor:</strong> {{ result.value }}</p>
+  </div>
+</div>
